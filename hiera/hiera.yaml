@@ -1,0 +1,12 @@
+version: 5
+defaults:
+  datadir: .
+  data_hash: yaml_data
+
+hierarchy:
+  - name: "Bootstrap data"
+    path: "bootstrap.yaml"
+  - name: "Workstation data"
+    path: "workstation.yaml"
+  - name: "User data"
+    path: "user.yaml"
