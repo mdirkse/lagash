@@ -1,0 +1,5 @@
+sys-apps/kmod lzma zlib
+sys-boot/grub libzfs
+>=sys-boot/grub-2.04-r2 mount
+>=sys-libs/gdbm-1.18.1-r1 berkdb
+sys-kernel/linux-firmware savedconfig

@@ -1,0 +1,22 @@
+# Git config, managed by Puppet
+
+[user]
+  name  = <%= @user['fullname'] %>
+  email = <%= @user['email'] %>
+[alias]
+  co   = checkout
+  st   = status -sb
+  ls   = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+  ll   = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  lds  = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+  ds   = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+[branch]
+  autosetuprebase = always
+[http]
+  sslVerify = true
+[branch "*branch-name*"]
+  rebase = true
+[push]
+  default = simple
+[credential]
+  helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret

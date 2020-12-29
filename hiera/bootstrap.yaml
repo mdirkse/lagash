@@ -1,0 +1,20 @@
+bootstrap:
+  disk: /dev/nvme0n1
+  hostname: lagash
+  jobs:
+    emerge: 4
+    make: 16
+  mount: /mnt/gentoo
+  stage3:
+    checksum: '9e5a99e17cfe5d15ae2b576b8e59414fd33ef05eee5ea724d9adf2239c93e1e9a5c1660f72be2ee608088b85f698ef4e1f9a2ac9a2f49fc48082678a6ec5cfd9'
+    url: 'http://mirror.leaseweb.com/gentoo/releases/amd64/autobuilds/20200705T214503Z/stage3-amd64-systemd-20200705T214503Z.tar.xz'
+  zpool:
+    boot: 
+      name: bpool
+      ds:
+        boot: boot
+    root: 
+      name: rpool
+      ds:
+        home: home
+        os: os
