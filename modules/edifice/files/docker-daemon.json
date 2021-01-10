@@ -1,0 +1,6 @@
+{
+  "dns": ["8.8.8.8", "4.4.4.4"],
+  "max-concurrent-downloads": 5,
+  "selinux-enabled": false,
+  "storage-driver": "zfs"
+}

@@ -1,0 +1,14 @@
+app-misc/ddcutil ~amd64
+dev-java/openjdk-bin ~amd64
+dev-lang/rust-bin ~amd64
+dev-libs/date ~amd64
+dev-libs/light ~amd64
+dev-libs/spdlog ~amd64
+gui-apps/waybar ~amd64
+media-gfx/imv ~amd64
+media-sound/spotify ~amd64
+net-im/slack ~amd64
+net-im/teams ~amd64
+x11-terms/kitty ~amd64
+x11-terms/kitty-terminfo ~amd64
+virtual/rust ~amd64

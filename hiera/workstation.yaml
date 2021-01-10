@@ -1,0 +1,119 @@
+workstation:
+  cargo:
+    apps:
+      - bandwhich
+      - bat
+      - cargo-bloat
+      - cargo-feature-analyst
+      - cargo-geiger
+      - cargo-tree
+      - cargo-udeps
+      - cargo-update
+      - cargo-watch
+      - du-dust
+      - exa
+      - procs
+      - ripgrep
+      - twiggy
+  extra-packages:
+    - app-arch/xarchiver
+    - dev-util/diffuse
+    - dev-vcs/tig
+    - gnome-extra/gnome-calculator
+    - media-gfx/gimp
+    - media-gfx/imv
+    - media-fonts/corefonts
+    - media-fonts/noto
+    - media-fonts/noto-emoji
+    - media-sound/pavucontrol
+    - media-sound/spotify
+    - media-video/vlc
+    - sys-block/parted
+  fonts: "https://github.com/mdirkse/fonts/archive/master.zip"
+  shell:
+    name: fish
+    package: app-shells/fish
+  sway:
+    app-pinning:
+      chrome:
+        criteria: 'class="^Google-chrome$"'
+        workspace: $ws1
+      code:
+        criteria: 'class="^Code$"'
+        workspace: $ws2
+      prusaslicer:
+        criteria: 'class="[Pp]rusa"'
+        workspace: $ws3
+      slack:
+        criteria: 'class="^Slack$"'
+        workspace: $ws5
+      spotify:
+        criteria: 'instance="^spotify$"'
+        workspace: $ws6
+      vbox:
+        criteria: 'class="^VirtualBox"'
+        workspace: $ws7
+      idea:
+        criteria: 'class="^jetbrains-idea$"'
+        workspace: $ws8
+
+    floating:
+      - 'app_id="blueman-manager"'
+      - 'app_id="gnome-calculator"'
+      - 'app_id="google-chrome-stable"'
+      - 'app_id="nm-connection-editor"'
+      - 'app_id="pavucontrol"'
+      - 'class="Spotify"'
+    startup:
+      - blueman-applet
+      - ~/bin/chrome
+      - ~/bin/code
+      - "nm-applet --indicator"
+      - slack
+      - spotify
+      - "swayidle -w before-sleep 'swaylock -f '"
+    wallpaper: "Pictures/wallpaper/kizlar-ve-kedi.jpg"
+
+  exec-scripts:
+    - name: chrome
+      content: google-chrome-stable --enable-features=UseOzonePlatform --ozone-platform=wayland
+    - name: clion
+      content: ~/Apps/clion-2019.3.4/bin/clion.sh
+    - name: idea
+      content: ~/Apps/idea-IC-201.7223.91/bin/idea.sh
+    - name: fusion360
+      content: virtualboxvm --startvm 833af508-90a0-47e3-841f-16c504eac714
+    - name: winvm
+      content: virtualboxvm --startvm cd7b4945-819c-4546-82a6-fa5b070b3404
+
+  dev-apps:
+    gcloudsdk:
+      archive: "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-VERSION-linux-x86_64.tar.gz"
+      dir: "google-cloud-sdk"
+      executables:
+        - "/bin/gcloud"
+      homevar: "GCLOUD_SDK_HOME"
+      name: "gcloud"
+      version: "323.0.0"
+    gradle:
+      archive: "https://services.gradle.org/distributions/gradle-VERSION-all.zip"
+      dir: "gradle-VERSION"
+      executables:
+        - "/bin/gradle"
+      homevar: "GRADLE_HOME"
+      name: "gradle"
+      version: "6.8"
+    gw:
+      archive: "https://github.com/gdubw/gdub/archive/vVERSION.zip"
+      dir: "gdub-VERSION"
+      executables:
+        - "/bin/gw"
+      name: "gdub"
+      version: "0.2.0"
+    visualvm:
+      archive: "https://github.com/visualvm/visualvm.src/releases/download/2.0.5/visualvm_VERSION.zip"
+      dir: "visualvm_VERSION"
+      executables:
+        - "/bin/visualvm"
+      name: "visualvm"
+      version: "205"

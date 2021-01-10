@@ -9,7 +9,6 @@ source /etc/profile
 emerge -uDN app-admin/sudo \
             app-portage/eix \
             dev-vcs/git \
-            net-misc/dhcpcd \
-            net-wireless/iw \
+            net-misc/connman \
             net-wireless/wpa_supplicant \
             sys-fs/fuse

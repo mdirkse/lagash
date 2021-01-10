@@ -1,1 +1,3 @@
+# Ignore all the secret stuff
 hiera/user.yaml
+modules/base/files/ssh_config

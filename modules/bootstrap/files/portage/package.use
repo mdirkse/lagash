@@ -1,5 +1,53 @@
+app-crypt/gcr gtk
+app-crypt/libsecret
+app-crypt/pinentry gnome-keyring
+app-text/ghostscript-gpl cups
+app-text/xmlto text
+dev-lang/python sqlite
+dev-lang/rust-bin clippy rls rustfmt
+dev-libs/libpcre2 pcre16 pcre32
+dev-ruby/bundler -doc
+gnome-base/gnome-keyring -ssh-agent
+gui-apps/swaylock fish-completion
+gui-apps/waybar network popups pulseaudio tray udev
+gui-libs/wlroots X
+gui-wm/sway fish-completion X
+net-libs/libproxy -networkmanager
+net-misc/networkmanager -ncurses -modemmanager -ppp -wext
+net-wireless/bluez deprecated user-session
+net-wireless/wpa_supplicant dbus
+sys-apps/dbus user-session X
 sys-apps/kmod lzma zlib
-sys-boot/grub libzfs
->=sys-boot/grub-2.04-r2 mount
->=sys-libs/gdbm-1.18.1-r1 berkdb
+sys-apps/systemd cgroup-hybrid
+sys-auth/polkit gtk
+sys-boot/grub libzfs mount
 sys-kernel/linux-firmware savedconfig
+sys-libs/gdbm berkdb
+sys-libs/zlib minizip
+
+# Multimedia stuff
+media-gfx/imagemagick jpeg jpeg2k png svg tiff xml webp
+media-plugins/alsa-plugins pulseaudio
+media-sound/pulseaudio bluetooth dbus
+media-sound/spotify pulseaudio
+
+# X stuff
+app-text/poppler cairo
+dev-cpp/cairomm aqua X
+dev-cpp/gtkmm X
+dev-libs/libdbusmenu gtk3
+dev-qt/qtnetwork -networkmanager
+dev-qt/qtgui egl eglfs X
+media-gfx/gimp -alsa
+media-libs/gegl cairo
+media-libs/libcanberra -sound
+media-libs/libepoxy X
+media-libs/libglvnd X
+media-libs/libsdl X
+media-libs/libsdl2 gles2
+media-libs/mesa X
+x11-libs/cairo aqua X
+x11-libs/gdk-pixbuf jpeg
+x11-libs/gtk+ X
+x11-libs/libfm gtk -automount
+x11-libs/libxkbcommon X

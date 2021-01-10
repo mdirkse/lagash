@@ -1,0 +1,7 @@
+[cargo-new]
+name = "<%= @user['fullname'] %>"
+email = "<%= @user['email'] %>"
+vcs = "git"
+
+[build]
+rustflags = ["-Clink-args=-fuse-ld=lld"]

@@ -1,0 +1,5 @@
+<% @dev_apps.each do |app| -%>
+<% if app[1].key?('homevar') -%>
+set -x <%= app[1]['homevar'] %> <%= @userhome %>/Apps/<%= app[1]['dir'].gsub(/VERSION/, app[1]['version']) %>
+<% end -%>
+<% end -%>

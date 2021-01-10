@@ -1,8 +1,8 @@
 [Unit]
 Description=Load <%= @rpool %>/home encryption keys
 Before=systemd-user-sessions.service
-Before=zfs-mount.service
-After=zfs-import.target
+Before=zfs-import-scan.service
+Before=zfs-import-cache.service
 
 [Service]
 Type=oneshot
@@ -10,4 +10,4 @@ RemainAfterExit=yes
 ExecStart=/bin/bash -c 'systemd-ask-password "Encrypted ZFS password for <%= @zfs_ds_home %>" --no-tty | zfs load-key <%= @zfs_ds_home %>'
 
 [Install]
-WantedBy=zfs-mount.service
+WantedBy=zfs-import.target

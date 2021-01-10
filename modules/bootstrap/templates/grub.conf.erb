@@ -1,3 +1,7 @@
 GRUB_BACKGROUND="/boot/kitten.jpg"
-GRUB_CMDLINE_LINUX="dozfs real_root=ZFS=<%= @zfs_ds_os %> init=/usr/lib/systemd/systemd"
+GRUB_CMDLINE_LINUX="dozfs"
+GRUB_CMDLINE_LINUX="${GRUB_CMDLINE_LINUX} real_root=ZFS=<%= @zfs_ds_os %>"
+GRUB_CMDLINE_LINUX="${GRUB_CMDLINE_LINUX} init=/usr/lib/systemd/systemd"
+GRUB_CMDLINE_LINUX="${GRUB_CMDLINE_LINUX} systemd.unified_cgroup_hierarchy=0" # Needed because docker doesn't work otherwise
+GRUB_CMDLINE_LINUX="${GRUB_CMDLINE_LINUX} mem_sleep_default=deep" # See https://wiki.archlinux.org/index.php/Dell_XPS_15_7590#Suspend
 GRUB_DISTRIBUTOR="Gentoo"

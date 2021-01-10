@@ -22,6 +22,13 @@ class bootstrap (String $fs_root) {
   $rpool = $::bootstrap[zpool][root][name]
   $zfs_ds_os = "${rpool}/${::bootstrap[zpool][root][ds][os]}"
   $zfs_ds_home = "${rpool}/${::bootstrap[zpool][root][ds][home]}"
+  $kernel_config = '/usr/src/linux/.config'
+
+  # If fs root is not "" we're bootstrapping from another OS and we can't assume
+  # that the source package is installed and the /usr/src/linux symlink exists.
+  if $fs_root != ''  {
+    $kernel_config = '/tmp/kernel.config'
+  }
 
   $files = [
     {
@@ -53,6 +60,10 @@ class bootstrap (String $fs_root) {
       content => file('bootstrap/portage/package.accept_keywords'),
     },
     {
+      location => '/etc/portage/package.mask',
+      content => file('bootstrap/portage/package.mask'),
+    },
+    {
       location => '/etc/portage/package.use',
       content => file('bootstrap/portage/package.use'),
     },
@@ -77,7 +88,7 @@ class bootstrap (String $fs_root) {
       content => 'Europe/Amsterdam'
     },
     {
-      location => '/tmp/kernel.config',
+      location => $kernel_config,
       content => file('bootstrap/kernel.config')
     }
   ]

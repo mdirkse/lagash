@@ -1,0 +1,53 @@
+{
+  "files.autoSave": "onFocusChange",
+  "files.insertFinalNewline": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "git.confirmSync": false,
+  "git.autofetch": true,
+  "window.zoomLevel": 0,
+  "editor.suggestSelection": "first",
+  "gitlens.defaultDateStyle": "absolute",
+  "gitlens.defaultDateFormat": "YYYY-MM-DDThh:mm:ss.sssZ",
+  "gitlens.defaultDateShortFormat": "YYYY-MM-DD",
+  "lldb.verboseLogging": true,
+  "explorer.confirmDelete": false,
+  "editor.wordWrap": "on",
+  "lldb.adapterType": "classic",
+  "git.pullTags": false,
+  "gitlens.gitCommands.closeOnFocusOut": true,
+  "vetur.format.defaultFormatter.js": "vscode-typescript",
+  "workbench.tree.indent": 16,
+  "workbench.startupEditor": "none",
+  "window.restoreWindows": "all",
+  "window.openFoldersInNewWindow": "on",
+  "editor.fontFamily": "'RobotoMono Nerd Font', 'monospace', monospace, 'Font Awesome 5 Free'",
+  "editor.fontSize": 13,
+  "shellcheck.run": "onSave",
+  "shellcheck.useWorkspaceRootAsCwd": true,
+  "trailing-spaces.trimOnSave": true,
+  "sync.gist": "d4fcc353c13672a8e0acfedeb6de41bd",
+  "sync.autoUpload": true,
+  "explorer.confirmDragAndDrop": false,
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
+  "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+  "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+  "trailing-spaces.syntaxIgnore": ["markdown"],
+  "prettier.printWidth": 160,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}

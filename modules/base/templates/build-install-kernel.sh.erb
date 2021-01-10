@@ -1,0 +1,22 @@
+#!/bin/bash
+
+make clean
+make modules_prepare
+make -j<%= @parallel_jobs %>
+make modules_install
+make install
+emerge @module-rebuild
+genkernel initramfs --firmware \
+                    --kernel-config=/usr/src/linux/.config \
+                    --keymap \
+                    --makeopts=-j<%= @parallel_jobs %> \
+                    --mountboot \
+                    --no-clean \
+                    --zfs
+
+grub-mkconfig -o /boot/grub/grub.cfg
+grub-install --target=x86_64-efi \
+             --efi-directory=/boot/efi \
+             --bootloader-id=Gentoo \
+             --recheck \
+             --no-floppy

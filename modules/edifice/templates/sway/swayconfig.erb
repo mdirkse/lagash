@@ -1,0 +1,176 @@
+# Read `man 5 sway` for a complete reference.
+
+### Variables
+set $menu swaymsg exec -- wofi --show=run
+set $mod Mod4
+set $term kitty
+
+set $externalscreen "DP-1"
+set $laptopscreen "eDP-1"
+
+### Output configuration
+output * bg <%= @wallpaper %> fill
+output DP-1 resolution 2560x1440 position 0,0 scale 1.0
+output eDP-1 resolution 3840x2169 position 2560,0 scale 2.0
+
+font pango:SFNS Display 10
+
+### Input configuration
+   input "2:7:SynPS/2_Synaptics_TouchPad" {
+       dwt enabled
+       tap disabled
+       natural_scroll disabled
+       middle_emulation disabled
+   }
+   
+   # Make sure to enable numlock
+   input type:keyboard xkb_numlock enabled
+
+### Key bindings
+# Basics:
+    bindsym $mod+Shift+c reload
+    bindsym $mod+Return exec $term
+    bindsym $mod+Shift+q kill
+    bindsym $mod+d exec $menu
+    bindsym $mod+l exec swaylock
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+
+# Moving around:
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
+    bindsym $mod+Shift+Left move left
+    bindsym $mod+Shift+Down move down
+    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Right move right
+
+# Workspaces:
+    # Chrome
+    set $ws1 "1 "
+    # Firefox
+    set $ws2 "2 "
+    # Text editor
+    set $ws3 "3 "
+    # Console
+    set $ws4 "4 "
+    # Chat
+    set $ws5 "5 "
+    # Misc
+    set $ws6 "6 "
+    # VMs
+    set $ws7 "7 "
+    # IDE
+    set $ws8 "8 "
+
+    workspace $ws1 output $externalscreen
+    workspace $ws2 output $externalscreen
+    workspace $ws3 output $externalscreen
+    workspace $ws4 output $externalscreen
+    workspace $ws5 output $laptopscreen
+    workspace $ws6 output $laptopscreen
+    workspace $ws7 output $externalscreen
+    workspace $ws8 output $externalscreen
+
+    # switch to workspace
+    bindsym $mod+1 workspace $ws1
+    bindsym $mod+2 workspace $ws2
+    bindsym $mod+3 workspace $ws3
+    bindsym $mod+4 workspace $ws4
+    bindsym $mod+5 workspace $ws5
+    bindsym $mod+6 workspace $ws6
+    bindsym $mod+7 workspace $ws7
+    bindsym $mod+8 workspace $ws8
+    bindsym $mod+9 workspace 9
+    bindsym $mod+0 workspace 10
+    bindsym $mod+Shift+1 move container to workspace $ws1
+    bindsym $mod+Shift+2 move container to workspace $ws2
+    bindsym $mod+Shift+3 move container to workspace $ws3
+    bindsym $mod+Shift+4 move container to workspace $ws4
+    bindsym $mod+Shift+5 move container to workspace $ws5
+    bindsym $mod+Shift+6 move container to workspace $ws6
+    bindsym $mod+Shift+7 move container to workspace $ws7
+    bindsym $mod+Shift+8 move container to workspace $ws8
+    bindsym $mod+Shift+9 move container to workspace 9
+    bindsym $mod+Shift+0 move container to workspace 10
+
+    # App workspace assignment
+    <% @app_pinning.each do |pin| -%>
+    assign [<%= pin[1]["criteria"] %>] → <%= pin[1]["workspace"] %>
+    <% end -%>
+
+# Layout stuff:
+    # You can "split" the current object of your focus with
+    # $mod+b or $mod+v, for horizontal and vertical splits
+    # respectively.
+    bindsym $mod+b splith
+    bindsym $mod+v splitv
+
+    # Switch the current container between different layout styles
+    bindsym $mod+s layout stacking
+    bindsym $mod+w layout tabbed
+    bindsym $mod+e layout toggle split
+
+    # Make the current focus fullscreen
+    bindsym $mod+f fullscreen
+
+    # Toggle the current focus between tiling and floating mode
+    bindsym $mod+Shift+space floating toggle
+
+    # Swap focus between the tiling area and the floating area
+    bindsym $mod+space focus mode_toggle
+
+    # Move focus to the parent container
+    bindsym $mod+a focus parent
+    floating_modifier $mod normal
+
+# Scratchpad:
+    # Sway has a "scratchpad", which is a bag of holding for windows.
+    # You can send windows there and get them back later.
+
+    # Move the currently focused window to the scratchpad
+    bindsym $mod+Shift+minus move scratchpad
+
+    # Show the next scratchpad window or hide the focused scratchpad window.
+    # If there are multiple scratchpad windows, this command cycles through them.
+    bindsym $mod+minus scratchpad show
+
+# Resizing containers:
+    mode "resize" {
+        bindsym Left resize shrink width 10px
+        bindsym Down resize grow height 10px
+        bindsym Up resize shrink height 10px
+        bindsym Right resize grow width 10px
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+    }
+    bindsym $mod+r mode "resize"
+
+# Bar
+    bar {
+        swaybar_command waybar
+    }
+
+# Floating windows
+    <% @floating.each do |float| -%>
+    for_window [<%= float %>] floating enable
+    <% end -%>
+
+# Launch apps on startup
+    <% @startup.each do |su| -%>
+    exec <%= su %>
+    <% end -%>
+
+# # Volume
+# bindsym XF86AudioRaiseVolume exec pactl -- set-sink-volume @DEFAULT_SINK@ +2%
+# bindsym XF86AudioLowerVolume exec pactl -- set-sink-volume @DEFAULT_SINK@ -2%
+# bindsym XF86AudioMute exec pactl -- set-sink-mute @DEFAULT_SINK@ toggle
+
+# # Lights brightness
+# bindsym XF86MonBrightnessDown exec --no-startup-id setdispbrightness.sh -10
+# bindsym XF86MonBrightnessUp exec --no-startup-id setdispbrightness.sh +10
+# bindsym XF86KbdBrightnessDown exec --no-startup-id setkbbrightness.sh -10
+# bindsym XF86KbdBrightnessUp exec --no-startup-id setkbbrightness.sh +10
+
+# # Spotify
+# bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"

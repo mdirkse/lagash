@@ -1,0 +1,2 @@
+dev-lang/rust
+x11-misc/notification-daemon # Use mako instead

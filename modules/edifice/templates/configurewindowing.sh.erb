@@ -1,0 +1,18 @@
+#!/bin/bash
+set -o nounset
+set -o errexit
+IFS=$'\n'
+
+export DISPLAY=:0
+
+# Set the defaults for i3
+sway_config="single"
+
+# If so, configure it
+#if [ -n "${ext_disp}" ]; then
+#  sway_config="dual"
+#fi
+
+cp "<%= @swaydir %>/config-${sway_config}" "<%= @swaydir %>/config"
+
+swaymsg restart
