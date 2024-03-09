@@ -1,0 +1,2 @@
+#! /usr/bin/env bash
+exec VirtualBoxVM --startvm "$(VBoxManage list vms | grep Windows | awk -F'[{}]' '{print $2}')"

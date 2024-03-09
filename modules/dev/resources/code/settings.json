@@ -1,0 +1,67 @@
+{
+  "editor.fontFamily": "'RobotoMono Nerd Font', 'monospace', monospace, 'Font Awesome 6 Free'",
+  "editor.fontSize": 12,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.suggestSelection": "first",
+  "editor.wordWrap": "on",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "files.autoSave": "onFocusChange",
+  "files.insertFinalNewline": true,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.pullTags": false,
+  "gitlens.defaultDateFormat": "YYYY-MM-DDThh:mm:ss.sssZ",
+  "gitlens.defaultDateShortFormat": "YYYY-MM-DD",
+  "gitlens.defaultDateStyle": "absolute",
+  "gitlens.gitCommands.closeOnFocusOut": true,
+  "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
+  "lldb.adapterType": "classic",
+  "lldb.verboseLogging": true,
+  "prettier.printWidth": 160,
+  "shellcheck.run": "onSave",
+  "shellcheck.useWorkspaceRootAsCwd": true,
+  "sync.autoUpload": true,
+  "sync.gist": "d4fcc353c13672a8e0acfedeb6de41bd",
+  "trailing-spaces.syntaxIgnore": ["markdown"],
+  "trailing-spaces.trimOnSave": true,
+  "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+  "vetur.format.defaultFormatter.js": "vscode-typescript",
+  "window.openFoldersInNewWindow": "on",
+  "window.restoreWindows": "all",
+  "window.titleBarStyle": "custom",
+  "window.zoomLevel": 0.3,
+  "workbench.startupEditor": "none",
+  "workbench.tree.indent": 16,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.associations": {
+    "*.svelte": "svelte"
+  },
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "svelte.enable-ts-plugin": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.formatOnSave": false
+  }
+}
