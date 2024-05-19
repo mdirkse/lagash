@@ -15,6 +15,7 @@
     pcmanfm
     slurp
     swaynotificationcenter
+    xdg-utils
     waybar
     wev
     wl-clipboard
