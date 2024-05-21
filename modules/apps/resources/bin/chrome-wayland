@@ -1,2 +1,2 @@
 #! /usr/bin/env bash
-exec google-chrome-stable --enable-features=UseOzonePlatform --ozone-platform=wayland "$@"
+exec google-chrome-stable --enable-features=UseOzonePlatform --ozone-platform=wayland --disable-gpu-memory-buffer-video-frames "$@"
