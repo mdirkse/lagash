@@ -5,6 +5,7 @@
     bat
     curl
     difftastic
+    dmidecode
     dnspeep
     dosfstools
     du-dust
@@ -20,6 +21,7 @@
     nmap
     powertop
     procs
+    pstree
     pv
     ripgrep
     rustup
