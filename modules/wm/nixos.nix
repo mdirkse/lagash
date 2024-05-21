@@ -13,6 +13,7 @@
     networkmanagerapplet
     pavucontrol
     pcmanfm
+    pop-gtk-theme
     slurp
     swaynotificationcenter
     xdg-utils
