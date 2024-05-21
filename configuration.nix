@@ -41,6 +41,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.supportedFilesystems = [ "zfs" ];
 
+  boot.kernelParams = [ "mem_sleep_default=deep" ];
+
   boot.kernel.sysctl."fs.inotify.max_user_watches" = 524288;
   boot.kernel.sysctl."net.ipv4.ip_forward" = 0;
 

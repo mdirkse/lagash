@@ -4,8 +4,13 @@
   xdg.configFile."waybar/config".source = ./resources/waybar/config;
   xdg.configFile."waybar/style.css".source = ./resources/waybar/style.css;
 
+  home.file.".icons/OpenZone_Black".source = "${pkgs.openzone-cursors}/share/icons/OpenZone_Black";
+
   gtk = {
     enable = true;
+    cursorTheme = {
+      name = "OpenZone_Black";
+    };
     theme = {
       name = "Pop";
     };

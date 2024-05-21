@@ -8,12 +8,15 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    glib
     grim
     light
     networkmanagerapplet
+    openzone-cursors
     pavucontrol
     pcmanfm
     pop-gtk-theme
+    pop-icon-theme
     slurp
     swaynotificationcenter
     xdg-utils

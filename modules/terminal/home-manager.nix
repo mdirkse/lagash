@@ -7,4 +7,5 @@
   xdg.configFile."fish/functions/update-system.fish".source = ./resources/fish/functions/update-system.fish;
 
   xdg.configFile."kitty/kitty.conf".source = ./resources/kitty.conf;
+
 }

@@ -32,6 +32,7 @@
   ];
 
   programs.fish.enable = true;
+  programs.fish.interactiveShellInit = "fish_add_path $HOME/bin";
 
   programs.fish.shellAliases = {
     cat = "bat";
