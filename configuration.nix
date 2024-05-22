@@ -35,8 +35,6 @@
   networking.hostName = "lagash";
   networking.networkmanager.enable = true;
 
-
-
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.systemd-boot.enable = true;
   boot.supportedFilesystems = [ "zfs" ];
@@ -50,7 +48,8 @@
   hardware.bluetooth.powerOnBoot = true;
   services.blueman.enable = true;
 
-  networking.timeServers = options.networking.timeServers.default ++ [ "0.nl.pool.ntp.org" "1.nl.pool.ntp.org" ];
+  networking.timeServers = options.networking.timeServers.default
+    ++ [ "0.nl.pool.ntp.org" "1.nl.pool.ntp.org" ];
 
   security.rtkit.enable = true;
   services.pipewire = {
