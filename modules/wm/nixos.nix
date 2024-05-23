@@ -10,6 +10,7 @@
   environment.systemPackages = with pkgs; [
     glib
     grim
+    kanshi
     light
     networkmanagerapplet
     openzone-cursors
@@ -24,6 +25,7 @@
     wev
     wl-clipboard
     wlogout
+    wlr-randr
     wofi
     xorg.xeyes
   ];
