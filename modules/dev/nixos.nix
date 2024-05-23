@@ -13,7 +13,7 @@
     kubelogin-oidc
     shellcheck
     terraform
-    #postman
+    postman
 
     # Java
     gradle
