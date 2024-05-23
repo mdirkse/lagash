@@ -11,7 +11,6 @@
     glib
     grim
     kanshi
-    light
     networkmanagerapplet
     openzone-cursors
     pavucontrol
@@ -30,10 +29,12 @@
     xorg.xeyes
   ];
 
-  services.gnome.gnome-keyring.enable = true;
+  programs.light.enable = true;
 
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
   };
+
+  services.gnome.gnome-keyring.enable = true;
 }
