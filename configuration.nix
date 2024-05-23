@@ -51,6 +51,8 @@
   networking.timeServers = options.networking.timeServers.default
     ++ [ "0.nl.pool.ntp.org" "1.nl.pool.ntp.org" ];
 
+  programs.command-not-found.enable = false;
+
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
