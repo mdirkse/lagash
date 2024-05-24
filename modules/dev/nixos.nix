@@ -2,6 +2,7 @@
   environment.systemPackages = with pkgs; [
     awscli2
     clang
+    gh
     git
     google-cloud-sdk
     jetbrains.idea-community
