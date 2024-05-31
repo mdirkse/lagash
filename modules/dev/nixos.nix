@@ -36,6 +36,7 @@
   # Aliases
   programs.fish.shellAliases = {
     gralde = "gradle";
+    gti = "git";
     k = "kubectl";
     kctx = "kubectx";
     kns = "kubens";

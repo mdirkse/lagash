@@ -41,6 +41,7 @@
     ll = "eza -la";
     ls = "eza";
     ps = "procs";
+    rg = "rg --hidden";
     rgrep = "rg";
     ssh = "kitty +kitten ssh";
   };
