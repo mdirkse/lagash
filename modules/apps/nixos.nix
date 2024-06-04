@@ -11,12 +11,12 @@
         github.vscode-github-actions
         hashicorp.terraform
         ms-azuretools.vscode-docker
-        octref.vetur
         shardulm94.trailing-spaces
         skyapps.fish-vscode
         svelte.svelte-vscode
         timonwong.shellcheck
         tyriar.sort-lines
+        vue.volar
       ];
     })
     gimp
