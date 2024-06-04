@@ -40,6 +40,7 @@
     ikat = "kitty +kitten icat";
     ll = "eza -la";
     ls = "eza";
+    nix-shell = "nix-shell --command (which fish)";
     ps = "procs";
     rg = "rg --hidden --no-ignore";
     rgrep = "rg";
