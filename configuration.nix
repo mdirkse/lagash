@@ -48,6 +48,8 @@
   hardware.bluetooth.powerOnBoot = true;
   services.blueman.enable = true;
 
+  services.tailscale.enable = true;
+
   networking.timeServers = options.networking.timeServers.default
     ++ [ "0.nl.pool.ntp.org" "1.nl.pool.ntp.org" ];
 

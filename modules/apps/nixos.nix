@@ -26,6 +26,7 @@
     prusa-slicer
     slack
     spotify
+    tailscale-systray
     #virtualboxExtpack
   ];
 
