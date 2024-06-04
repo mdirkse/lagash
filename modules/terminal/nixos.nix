@@ -17,8 +17,10 @@
     lsof
     nano
     netcat
+    networkmanager-openconnect
     nixfmt-classic
     nmap
+    openconnect
     powertop
     procs
     pstree
