@@ -5,8 +5,7 @@
     gh
     git
     google-cloud-sdk
-    jetbrains.idea-community
-    jetbrains.rust-rover
+    jetbrains-toolbox
     jq
     k9s
     kubectl
