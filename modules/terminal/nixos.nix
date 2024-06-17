@@ -39,6 +39,7 @@
   programs.fish.shellAliases = {
     cat = "bat";
     du = "dust";
+    g = "git";
     ikat = "kitty +kitten icat";
     ll = "eza -la";
     ls = "eza";
