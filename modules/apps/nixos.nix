@@ -24,6 +24,7 @@
     google-chrome
     imagemagick
     prusa-slicer
+    rawtherapee
     slack
     spotify
     tailscale-systray
