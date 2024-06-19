@@ -14,6 +14,7 @@
     shellcheck
     terraform
     postman
+    yq-go
 
     # Java
     gradle
