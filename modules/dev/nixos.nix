@@ -11,6 +11,7 @@
     kubectl
     kubectx
     kubelogin-oidc
+    meld
     shellcheck
     terraform
     postman
