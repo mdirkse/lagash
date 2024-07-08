@@ -34,6 +34,7 @@
   programs.chromium.enable = true;
   programs.chromium.extensions = [
     "aeblfdkhhhdcdjpifhhbdiojplfjncoa" # 1password
+    "maccjhjfjhgeacbaenlgghpfnlbgjnep" # clickable google maps
     "ollmdedpknmlcdmpehclmgbogpifahdc" # fobusmode
     "bcjindcccaagfpapjjmafapmmgkkhgoa" # jsonformatter
     "chlffgpmiacpedhhbkiomidkjlcfhogd" # pushbullet
