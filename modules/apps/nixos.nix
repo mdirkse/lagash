@@ -10,6 +10,7 @@
         github.copilot-chat
         github.vscode-github-actions
         hashicorp.terraform
+        mechatroner.rainbow-csv
         ms-azuretools.vscode-docker
         shardulm94.trailing-spaces
         skyapps.fish-vscode
@@ -20,7 +21,7 @@
       ];
     })
     gimp
-    gnome.gnome-calculator
+    gnome-calculator
     google-chrome
     imagemagick
     prusa-slicer
