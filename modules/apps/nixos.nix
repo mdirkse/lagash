@@ -36,7 +36,7 @@
   programs.chromium.extensions = [
     "aeblfdkhhhdcdjpifhhbdiojplfjncoa" # 1password
     "maccjhjfjhgeacbaenlgghpfnlbgjnep" # clickable google maps
-    "ollmdedpknmlcdmpehclmgbogpifahdc" # fobusmode
+    "ollmdedpknmlcdmpehclmgbogpifahdc" # focusmode
     "bcjindcccaagfpapjjmafapmmgkkhgoa" # jsonformatter
     "chlffgpmiacpedhhbkiomidkjlcfhogd" # pushbullet
     "hddnkoipeenegfoeaoibdmnaalmgkpip" # toby
