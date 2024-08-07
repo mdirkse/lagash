@@ -5,6 +5,7 @@
     bat
     curl
     difftastic
+    dig
     dmidecode
     dnspeep
     dosfstools
