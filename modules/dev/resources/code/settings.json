@@ -53,7 +53,8 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "files.associations": {
-    "*.svelte": "svelte"
+    "*.svelte": "svelte",
+    "*.tf": "terraform"
   },
   "[svelte]": {
     "editor.defaultFormatter": "svelte.svelte-vscode"
@@ -64,5 +65,6 @@
   },
   "[markdown]": {
     "editor.formatOnSave": false
-  }
+  },
+  "security.workspace.trust.untrustedFiles": "open"
 }
