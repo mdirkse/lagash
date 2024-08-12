@@ -29,7 +29,7 @@
     slack
     spotify
     tailscale-systray
-    #virtualboxExtpack
+    virtualbox
   ];
 
   programs.chromium.enable = true;
@@ -44,4 +44,5 @@
   ];
 
   virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.host.enableExtensionPack = true;
 }
