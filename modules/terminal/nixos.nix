@@ -22,6 +22,7 @@
     nixfmt-classic
     nmap
     openconnect
+    pciutils
     powertop
     procs
     pstree
