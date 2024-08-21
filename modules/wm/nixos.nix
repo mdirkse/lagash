@@ -1,4 +1,6 @@
 { inputs, lib, config, pkgs, ... }: {
+   imports = [ ./nvidia.nix ];
+
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   fonts.packages = with pkgs; [
@@ -37,4 +39,5 @@
   };
 
   services.gnome.gnome-keyring.enable = true;
+  security.polkit.enable = true;
 }
