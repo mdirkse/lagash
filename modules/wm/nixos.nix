@@ -11,6 +11,7 @@
 
   environment.systemPackages = with pkgs; [
     glib
+    glxinfo
     grim
     kanshi
     networkmanagerapplet
@@ -24,6 +25,9 @@
     xdg-utils
     waybar
     wev
+    winetricks
+    wineWowPackages.stable
+    wineWowPackages.waylandFull
     wl-clipboard
     wlogout
     wlr-randr

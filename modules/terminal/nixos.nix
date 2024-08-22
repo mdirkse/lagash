@@ -12,9 +12,11 @@
     du-dust
     eza
     file
+    gettext
     iputils
     kitty
     lld
+    lsb-release
     lsof
     nano
     netcat
