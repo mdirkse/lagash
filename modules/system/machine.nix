@@ -32,6 +32,8 @@
   }];
   security.rtkit.enable = true;
 
+  services.avahi.enable = false;
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;

@@ -22,13 +22,12 @@
     jdk21
 
     # Rust
-    cargo
+    rustup
     cargo-bloat
     cargo-geiger
     cargo-modules
     cargo-udeps
     cargo-watch
-    rustup
   ];
 
   # Set JAVA_HOME

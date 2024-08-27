@@ -32,7 +32,6 @@
     pstree
     pv
     ripgrep
-    rustup
     unzip
     usbutils
     wget
