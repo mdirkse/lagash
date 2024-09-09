@@ -59,7 +59,7 @@
 
   virtualisation.docker.enable = true;
   virtualisation.docker.daemon.settings = lib.mkDefault ''
-    {
+      {
         "dns": ["8.8.8.8", "4.4.4.4"],
         "max-concurrent-downloads": 5,
         "selinux-enabled": false
