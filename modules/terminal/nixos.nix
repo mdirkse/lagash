@@ -2,6 +2,7 @@
   environment.defaultPackages = lib.mkForce [];
 
   environment.systemPackages = with pkgs; [
+    atuin
     bandwhich
     bash
     bat
