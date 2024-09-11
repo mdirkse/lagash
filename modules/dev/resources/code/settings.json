@@ -9,6 +9,10 @@
   "editor.wordWrap": "on",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
+  "files.associations": {
+    "*.svelte": "svelte",
+    "*.tf": "terraform"
+  },
   "files.autoSave": "onFocusChange",
   "files.insertFinalNewline": true,
   "git.autofetch": true,
@@ -23,10 +27,12 @@
   "lldb.adapterType": "classic",
   "lldb.verboseLogging": true,
   "prettier.printWidth": 160,
+  "security.workspace.trust.untrustedFiles": "open",
   "shellcheck.run": "onSave",
   "shellcheck.useWorkspaceRootAsCwd": true,
   "sync.autoUpload": true,
   "sync.gist": "d4fcc353c13672a8e0acfedeb6de41bd",
+  "svelte.enable-ts-plugin": true,
   "trailing-spaces.syntaxIgnore": ["markdown"],
   "trailing-spaces.trimOnSave": true,
   "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
@@ -49,22 +55,22 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[vue]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "files.associations": {
-    "*.svelte": "svelte",
-    "*.tf": "terraform"
+  "[markdown]": {
+    "editor.formatOnSave": false
   },
   "[svelte]": {
     "editor.defaultFormatter": "svelte.svelte-vscode"
   },
-  "svelte.enable-ts-plugin": true,
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform"
+  },
+  "[terraform-vars]": {
+    "editor.defaultFormatter": "hashicorp.terraform"
+  },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[markdown]": {
-    "editor.formatOnSave": false
-  },
-  "security.workspace.trust.untrustedFiles": "open"
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
