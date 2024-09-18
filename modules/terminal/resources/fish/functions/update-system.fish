@@ -6,5 +6,6 @@ function update-system
     sudo nixos-rebuild switch --flake .#laptop --upgrade
     sudo nix-collect-garbage -d
     rustup update
+    rm -fr /home/maarten/Pictures/screenshots/*
     popd
 end
