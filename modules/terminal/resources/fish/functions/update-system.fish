@@ -1,5 +1,5 @@
 function update-system
-    pushd
+    pushd 2> /dev/null
     cd /home/maarten/Source/lagash/
     sudo nix-channel --update
     nix flake update
@@ -7,5 +7,5 @@ function update-system
     sudo nix-collect-garbage -d
     rustup update
     rm -fr /home/maarten/Pictures/screenshots/*
-    popd
+    popd 2> /dev/null
 end
