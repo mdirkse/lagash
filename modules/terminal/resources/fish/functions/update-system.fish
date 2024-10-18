@@ -7,5 +7,5 @@ function update-system
     sudo nix-collect-garbage -d
     rustup update
     rm -fr "/home/maarten/Pictures/screenshots/*"
-    popd 2> /dev/null
+    popd 2> /dev/null || true
 end
