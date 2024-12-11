@@ -6,7 +6,6 @@
   fonts.packages = with pkgs; [
     font-awesome
     helvetica-neue-lt-std
-    (nerdfonts.override { fonts = [ "RobotoMono" ]; })
   ];
 
   environment.systemPackages = with pkgs; [
@@ -20,6 +19,7 @@
     pcmanfm
     pop-gtk-theme
     pop-icon-theme
+    roboto-mono
     slurp
     swaynotificationcenter
     xdg-utils

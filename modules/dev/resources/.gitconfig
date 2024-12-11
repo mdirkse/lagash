@@ -1,8 +1,7 @@
 [user]
   name  = Maarten Dirkse
   email = maarten.dirkse@gmail.com
-[core]
-  editor = nano
+
 [alias]
   co   = checkout
   st   = status -sb
@@ -10,16 +9,28 @@
   ll   = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
   lds  = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
   ds   = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+
 [branch]
   autosetuprebase = always
-[http]
-  sslVerify = true
+
 [branch "*branch-name*"]
   rebase = true
+
+[core]
+  editor = nano
+  pager = delta
+
+[delta]
+    navigate = true
+
+[http]
+  sslVerify = true
+
+[interactive]
+    diffFilter = delta --color-only
+
 [push]
   default = simple
-[diff]
-  external = difft
 
 [include]
     path = ~/Work/.gitconfig-work

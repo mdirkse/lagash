@@ -6,7 +6,7 @@
     bash
     bat
     curl
-    difftastic
+    delta
     dig
     dmidecode
     dnspeep

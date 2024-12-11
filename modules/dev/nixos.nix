@@ -30,8 +30,8 @@
     cargo-watch
   ];
 
-  # Set JAVA_HOME
   environment.variables.JAVA_HOME = "${pkgs.jdk21.home}/lib/openjdk";
+  environment.variables.TF_PLUGIN_CACHE_DIR = "/home/maarten/.terraform.d/plugin-cache";
 
   # Aliases
   programs.fish.shellAliases = {
