@@ -1,4 +1,5 @@
 { inputs, lib, config, options, pkgs, ... }: {
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
   boot.kernel.sysctl."fs.inotify.max_user_watches" = 524288;
   boot.kernel.sysctl."net.ipv4.ip_forward" = 0;
   boot.kernelParams = [ "mem_sleep_default=deep" ];
