@@ -5,6 +5,7 @@
     bandwhich
     bash
     bat
+    btop
     curl
     delta
     dig
@@ -53,5 +54,6 @@
     rg = "rg --hidden --no-ignore";
     rgrep = "rg";
     ssh = "kitty +kitten ssh";
+    top = "btop";
   };
 }

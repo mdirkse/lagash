@@ -29,6 +29,7 @@
     slack
     spotify
     tailscale-systray
+    vlc
     virtualbox
   ];
 
