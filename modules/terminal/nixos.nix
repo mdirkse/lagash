@@ -17,6 +17,7 @@
     file
     gettext
     iputils
+    isd
     kitty
     lld
     lsb-release

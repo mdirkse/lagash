@@ -1,5 +1,5 @@
 { inputs, lib, config, pkgs, ... }: {
-   imports = [ ./nvidia.nix ];
+   imports = [ ./nvidia.nix ./niri/nixos.nix];
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
@@ -11,7 +11,6 @@
   environment.systemPackages = with pkgs; [
     glib
     glxinfo
-    grim
     kanshi
     networkmanagerapplet
     openzone-cursors
@@ -20,14 +19,15 @@
     pop-gtk-theme
     pop-icon-theme
     roboto-mono
-    slurp
+    swayidle
+    swaylock
     swaynotificationcenter
     xdg-utils
     waybar
     wev
-    winetricks
-    wineWowPackages.stable
-    wineWowPackages.waylandFull
+    #winetricks
+    #wineWowPackages.stable
+    #wineWowPackages.waylandFull
     wl-clipboard
     wlogout
     wlr-randr
@@ -36,11 +36,6 @@
   ];
 
   programs.light.enable = true;
-
-  programs.sway = {
-    enable = true;
-    wrapperFeatures.gtk = true;
-  };
 
   services.gnome.gnome-keyring.enable = true;
   security.polkit.enable = true;

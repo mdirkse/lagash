@@ -40,7 +40,7 @@
     "bcjindcccaagfpapjjmafapmmgkkhgoa" # jsonformatter
     "chlffgpmiacpedhhbkiomidkjlcfhogd" # pushbullet
     "hddnkoipeenegfoeaoibdmnaalmgkpip" # toby
-    "cjpalhdlnbpafiamejdnhcphjbkeiagm" # ublock origin
+    "ddkjiahejlhfcafbddmgiahcphecmpfh" # ublock origin lite
   ];
 
   virtualisation.virtualbox.host.enable = true;
