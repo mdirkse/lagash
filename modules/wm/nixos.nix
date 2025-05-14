@@ -1,6 +1,7 @@
 { inputs, lib, config, pkgs, ... }: {
    imports = [ ./nvidia.nix ./niri/nixos.nix];
 
+  environment.sessionVariables.DISPLAY = ":0";
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   fonts.packages = with pkgs; [
