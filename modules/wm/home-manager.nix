@@ -54,11 +54,7 @@ in {
     swayidle = {
       enable = true;
       systemdTarget = wm_target;
-      extraArgs = [
-        "-w"
-        "before-sleep"
-        "'swaylock -f --color 000000'"
-      ];
+      events = [ { event = "before-sleep"; command = "${pkgs.swaylock}/bin/swaylock -f --color 000000"; } ];
     };
     swaync.enable = true;
     trayscale.enable = true;
