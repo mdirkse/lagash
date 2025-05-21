@@ -38,7 +38,6 @@
     "aeblfdkhhhdcdjpifhhbdiojplfjncoa" # 1password
     "maccjhjfjhgeacbaenlgghpfnlbgjnep" # clickable google maps
     "bcjindcccaagfpapjjmafapmmgkkhgoa" # jsonformatter
-    "chlffgpmiacpedhhbkiomidkjlcfhogd" # pushbullet
     "hddnkoipeenegfoeaoibdmnaalmgkpip" # toby
     "ddkjiahejlhfcafbddmgiahcphecmpfh" # ublock origin lite
   ];
