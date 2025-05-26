@@ -13,7 +13,7 @@
     glib
     glxinfo
     openzone-cursors
-    pavucontrol
+    pwvucontrol
     pcmanfm
     pop-gtk-theme
     pop-icon-theme
