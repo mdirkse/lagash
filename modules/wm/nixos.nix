@@ -9,6 +9,12 @@
     helvetica-neue-lt-std
   ];
 
+  xdg.portal.config = {
+    common = {
+      default = [ "gtk" ];
+    };
+  };
+
   environment.systemPackages = with pkgs; [
     glib
     glxinfo
