@@ -165,9 +165,9 @@ binds {
 
     Mod+W { toggle-column-tabbed-display; }
 
-    Mod+Print { screenshot; show-pointer=false; }
-    Mod+Ctrl+Print { screenshot-screen; show-pointer=false; }
-    Mod+Alt+Print { screenshot-window; show-pointer=false; }
+    Mod+Print { screenshot show-pointer=false; }
+    Mod+Ctrl+Print { screenshot-screen show-pointer=false; }
+    Mod+Alt+Print { screenshot-window; }
 
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
