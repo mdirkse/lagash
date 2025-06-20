@@ -31,6 +31,7 @@
     tailscale-systray
     vlc
     virtualbox
+    zed-editor
   ];
 
   programs.chromium.enable = true;
