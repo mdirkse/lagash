@@ -42,11 +42,6 @@
     pulse.enable = true;
   };
 
-  system.switch = {
-    enable = false;
-    enableNg = true;
-  };
-
   time.timeZone = "Europe/Amsterdam";
 
   users.users = {
