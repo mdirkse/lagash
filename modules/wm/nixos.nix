@@ -18,6 +18,7 @@
   environment.systemPackages = with pkgs; [
     glib
     glxinfo
+    networkmanagerapplet
     openzone-cursors
     pwvucontrol
     pcmanfm

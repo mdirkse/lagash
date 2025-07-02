@@ -9,6 +9,10 @@ in {
   gtk = {
     enable = true;
     cursorTheme = { name = "OpenZone_Black"; };
+    iconTheme = {
+      package = pkgs.pop-icon-theme;
+      name = "pop-icon-theme";
+    };
     theme = { name = "Pop"; };
   };
 
