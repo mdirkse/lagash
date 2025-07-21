@@ -13,6 +13,9 @@
     common = {
       default = [ "gtk" ];
     };
+    obs-studio = {
+      default = [ "gnome" ];
+    };
   };
 
   environment.systemPackages = with pkgs; [
@@ -25,6 +28,7 @@
     pop-gtk-theme
     pop-icon-theme
     roboto-mono
+    xdg-desktop-portal-gnome
     xdg-utils
     wev
     wl-clipboard
