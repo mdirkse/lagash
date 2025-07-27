@@ -28,6 +28,10 @@ layout {
     }
 }
 
+environment {
+    DISPLAY ":0"
+}
+
 clipboard { disable-primary; } // Disable middle-click paste
 debug { keep-laptop-panel-on-when-lid-is-closed; }
 hotkey-overlay { skip-at-startup; }
