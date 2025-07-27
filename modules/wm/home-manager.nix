@@ -61,14 +61,17 @@ in {
       events = [ { event = "before-sleep"; command = "${pkgs.swaylock}/bin/swaylock -f --color 000000"; } ];
     };
     swaync.enable = true;
-    trayscale.enable = true;
+    trayscale.enable = false;
   };
 
   systemd.user.services = {
     swaybg = {
-      Unit = {
-        Description = "Wayland background";
+      Install = {
         WantedBy = [ wm_target ];
+      };
+      Unit = {
+        After = [ wm_target ];
+        Description = "Wayland background";
       };
 
       Service = {
@@ -77,9 +80,12 @@ in {
       };
     };
     xwayland-satellite = {
-      Unit = {
-        Description = "XWayland satellite";
+      Install = {
         WantedBy = [ wm_target ];
+      };
+      Unit = {
+        After = [ wm_target ];
+        Description = "XWayland satellite";
       };
 
       Service = {
