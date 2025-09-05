@@ -24,7 +24,6 @@
     networkmanagerapplet
     openzone-cursors
     pwvucontrol
-    pcmanfm
     pop-gtk-theme
     pop-icon-theme
     roboto-mono

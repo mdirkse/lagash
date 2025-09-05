@@ -37,6 +37,7 @@
     unzip
     usbutils
     wget
+    yazi
     zip
   ];
 
