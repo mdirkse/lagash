@@ -1,4 +1,4 @@
-function git-discard-merged-branch
+function g-discard-merged-branch
     set merged_branch (git rev-parse --abbrev-ref HEAD)
 
     if test $merged_branch = "master" || test $merged_branch = "main"
