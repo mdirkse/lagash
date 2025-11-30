@@ -12,7 +12,7 @@
     dmidecode
     dnspeep
     dosfstools
-    du-dust
+    dust
     eza
     file
     gettext
