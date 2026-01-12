@@ -20,7 +20,6 @@
 
   environment.systemPackages = with pkgs; [
     glib
-    mesa-demos
     networkmanagerapplet
     openzone-cursors
     pwvucontrol

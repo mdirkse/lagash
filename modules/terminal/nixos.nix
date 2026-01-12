@@ -25,7 +25,7 @@
     nano
     netcat
     networkmanager-openconnect
-    nixfmt-classic
+    nixfmt
     nmap
     openconnect
     pciutils
