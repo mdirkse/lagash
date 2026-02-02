@@ -1,2 +1,0 @@
-#! /usr/bin/env bash
-exec google-chrome-stable --enable-features=UseOzonePlatform --ozone-platform=wayland --app-id=cadlkienfkclaiaibeoongdcgmdikeeg

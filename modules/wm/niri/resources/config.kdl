@@ -39,11 +39,11 @@ prefer-no-csd
 screenshot-path "~/Pictures/Screenshots/%Y-%m-%d %H-%M-%S.png"
 
 // Autostart things
-spawn-at-startup "~/bin/chrome-wayland"
-spawn-at-startup "~/bin/code-wayland"
+spawn-at-startup "google-chrome-stable"
+spawn-at-startup "code"
 spawn-at-startup "~/bin/outlook"
-spawn-at-startup "~/bin/slack-wayland"
-spawn-at-startup "~/bin/spotify-wayland"
+spawn-at-startup "slack"
+spawn-at-startup "spotify"
 spawn-at-startup "~/bin/teams"
 
 // Window rules let you adjust behavior for individual windows.
@@ -72,7 +72,7 @@ window-rule {
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+C { spawn "chrome-wayland"; }
+    Mod+C { spawn "google-chrome-stable"; }
     Mod+D { spawn "wofi" "--show=run"; }
     Mod+L { spawn "swaylock" "--color" "000000"; }
     Mod+Return { spawn "kitty"; }

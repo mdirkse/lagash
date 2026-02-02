@@ -25,6 +25,7 @@
     nano
     netcat
     networkmanager-openconnect
+    net-tools
     nixfmt
     nmap
     openconnect
