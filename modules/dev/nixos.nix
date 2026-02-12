@@ -2,6 +2,7 @@
   environment.systemPackages = with pkgs; [
     awscli2
     clang
+    claude-code
     gh
     git
     google-cloud-sdk
@@ -12,6 +13,7 @@
     kubectx
     kubelogin-oidc
     meld
+    opencode
     shellcheck
     terraform
     postman
