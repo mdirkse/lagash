@@ -19,6 +19,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    brightnessctl
     glib
     networkmanagerapplet
     openzone-cursors
@@ -31,9 +32,8 @@
     wev
     wl-clipboard
     wlr-randr
-    xorg.xeyes
+    xeyes
   ];
 
-  programs.light.enable = true;
   security.polkit.enable = true;
 }
