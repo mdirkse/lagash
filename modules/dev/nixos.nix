@@ -3,6 +3,7 @@
     awscli2
     clang
     claude-code
+    code-cursor
     gh
     git
     google-cloud-sdk
