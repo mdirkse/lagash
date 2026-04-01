@@ -13,6 +13,15 @@
     };
   };
 
+  # Used by `nix` / `nixpkgs` flake commands (e.g. `nix profile install nixpkgs#…`).
+  # NixOS `nixpkgs.config` does not apply to those evaluations.
+  xdg.configFile."nixpkgs/config.nix".text = ''
+    {
+      allowUnfree = true;
+      allowUnfreePredicate = _: true;
+    }
+  '';
+
   home = {
     username = "maarten";
     homeDirectory = "/home/maarten";
