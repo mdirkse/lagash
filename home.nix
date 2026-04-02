@@ -1,6 +1,7 @@
 { inputs, lib, config, pkgs, ... }: {
   imports = [
     ./modules/apps/home-manager.nix
+    ./modules/ai/home-manager.nix
     ./modules/dev/home-manager.nix
     ./modules/terminal/home-manager.nix
     ./modules/wm/home-manager.nix

@@ -10,6 +10,7 @@
     }/module.nix"
     ./hardware/disko-config.nix
     ./modules/apps/nixos.nix
+    ./modules/ai/nixos.nix
     ./modules/dev/nixos.nix
     ./modules/system/nixos.nix
     ./modules/terminal/nixos.nix
