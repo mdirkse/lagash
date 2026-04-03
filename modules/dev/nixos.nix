@@ -14,6 +14,7 @@
     kubelogin-oidc
     meld
     shellcheck
+    serie
     terraform
     postman
     yq-go
