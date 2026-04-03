@@ -7,13 +7,18 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, sops-nix, ... }@inputs:
     let
       inherit (self) outputs;
       nixModules = [
         ./configuration.nix
+        sops-nix.nixosModules.sops
         home-manager.nixosModules.home-manager
         { home-manager.users.maarten = import ./home.nix; }
       ];
