@@ -7,6 +7,7 @@
     bat
     btop
     curl
+    cyme
     delta
     dig
     dmidecode
@@ -52,6 +53,7 @@
     ikat = "kitty +kitten icat";
     ll = "eza -la";
     ls = "eza";
+    lsusb = "cyme";
     nix-shell = "nix-shell --command (which fish)";
     ps = "procs";
     rg = "rg --hidden --no-ignore";
