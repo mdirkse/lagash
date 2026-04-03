@@ -13,6 +13,7 @@
     ./modules/ai/nixos.nix
     ./modules/dev/nixos.nix
     ./modules/system/nixos.nix
+    ./modules/secrets/nixos.nix
     ./modules/terminal/nixos.nix
     ./modules/wm/nixos.nix
   ];
