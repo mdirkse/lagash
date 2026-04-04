@@ -69,6 +69,27 @@ window-rule {
     open-floating true
 }
 
+window-rule {
+    match app-id=r#"^org\.gnome\.Calculator$"#
+    open-floating true
+}
+
+window-rule {
+    match app-id=r#"^nm-connection-editor$"#
+    open-floating true
+}
+
+window-rule {
+    match app-id=r#"^com\.saivert\.pwvucontrol$"#
+    open-floating true
+}
+
+// blueman-manager (Nix wrapped binary reports as .blueman-manager-wrapped)
+window-rule {
+    match app-id=r#"^\.blueman-manager-wrapped$"#
+    open-floating true
+}
+
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
