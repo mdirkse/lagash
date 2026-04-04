@@ -1,4 +1,5 @@
 input {
+    keyboard { numlock; }
     touchpad { disabled-on-external-mouse; }
     focus-follows-mouse max-scroll-amount="0%"
 }
