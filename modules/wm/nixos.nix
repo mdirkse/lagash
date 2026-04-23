@@ -1,5 +1,15 @@
-{ inputs, lib, config, pkgs, ... }: {
-   imports = [ ./nvidia.nix ./niri/nixos.nix];
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+{
+  imports = [
+    ./nvidia.nix
+    ./niri/nixos.nix
+  ];
 
   environment.sessionVariables.DISPLAY = ":0";
   environment.sessionVariables.NIXOS_OZONE_WL = "1";

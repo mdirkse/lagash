@@ -1,4 +1,12 @@
-{ inputs, lib, config, options, pkgs, ... }: {
+{
+  inputs,
+  lib,
+  config,
+  options,
+  pkgs,
+  ...
+}:
+{
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
   boot.kernel.sysctl."fs.inotify.max_user_watches" = 524288;
   boot.kernel.sysctl."net.ipv4.ip_forward" = 0;
@@ -19,18 +27,27 @@
   hardware.bluetooth.powerOnBoot = true;
   services.blueman.enable = true;
 
-  networking.timeServers = options.networking.timeServers.default
-    ++ [ "0.nl.pool.ntp.org" "1.nl.pool.ntp.org" ];
+  networking.timeServers = options.networking.timeServers.default ++ [
+    "0.nl.pool.ntp.org"
+    "1.nl.pool.ntp.org"
+  ];
 
   programs.command-not-found.enable = false;
 
-  security.sudo.extraRules = [{
-    users = [ "maarten" ];
-    commands = [{
-      command = "ALL";
-      options = [ "SETENV" "NOPASSWD" ];
-    }];
-  }];
+  security.sudo.extraRules = [
+    {
+      users = [ "maarten" ];
+      commands = [
+        {
+          command = "ALL";
+          options = [
+            "SETENV"
+            "NOPASSWD"
+          ];
+        }
+      ];
+    }
+  ];
   security.rtkit.enable = true;
 
   services.avahi.enable = false;
@@ -46,7 +63,12 @@
 
   users.users = {
     maarten = {
-      extraGroups = [ "docker" "vboxusers" "video" "wheel" ];
+      extraGroups = [
+        "docker"
+        "vboxusers"
+        "video"
+        "wheel"
+      ];
       initialPassword = "paratodostodo";
       isNormalUser = true;
       shell = pkgs.fish;
@@ -55,10 +77,10 @@
 
   virtualisation.docker.enable = true;
   virtualisation.docker.daemon.settings = lib.mkDefault ''
-      {
-        "dns": ["8.8.8.8", "4.4.4.4"],
-        "max-concurrent-downloads": 5,
-        "selinux-enabled": false
-      }'';
+    {
+      "dns": ["8.8.8.8", "4.4.4.4"],
+      "max-concurrent-downloads": 5,
+      "selinux-enabled": false
+    }'';
   virtualisation.docker.storageDriver = "zfs";
 }

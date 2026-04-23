@@ -1,4 +1,11 @@
-{ inputs, lib, config, pkgs, ... }: {
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+{
   environment.systemPackages = with pkgs; [
     beads
     claude-code
@@ -21,7 +28,9 @@
     networks."20-aibr" = {
       matchConfig.Name = "aibr";
       addresses = [ { Address = "192.168.83.1/24"; } ];
-      networkConfig = { ConfigureWithoutCarrier = true; };
+      networkConfig = {
+        ConfigureWithoutCarrier = true;
+      };
     };
 
     networks."21-aivm-tap" = {

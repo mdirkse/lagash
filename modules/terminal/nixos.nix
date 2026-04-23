@@ -1,5 +1,12 @@
-{ inputs, lib, config, pkgs, ... }: {
-  environment.defaultPackages = lib.mkForce [];
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+{
+  environment.defaultPackages = lib.mkForce [ ];
 
   environment.systemPackages = with pkgs; [
     bandwhich

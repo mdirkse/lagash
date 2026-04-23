@@ -9,7 +9,13 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }@inputs:
     let
       inherit (self) outputs;
       nixModules = [
@@ -18,7 +24,8 @@
         { home-manager.users.maarten = import ./home.nix; }
       ];
 
-    in {
+    in
+    {
       nixosConfigurations = {
         laptop = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };

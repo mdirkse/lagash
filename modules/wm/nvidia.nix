@@ -1,10 +1,16 @@
-{ pkgs, config, libs, ... }: {
+{
+  pkgs,
+  config,
+  libs,
+  ...
+}:
+{
 
   # Enable OpenGL
   hardware.graphics.enable = true;
 
   # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia = {
     # Modesetting is required.
@@ -26,16 +32,16 @@
     open = false;
 
     # Enable the Nvidia settings menu,
-	  # accessible via `nvidia-settings`.
+    # accessible via `nvidia-settings`.
     nvidiaSettings = true;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.stable;
 
     prime = {
-		# Make sure to use the correct Bus ID values for your system!
-		  intelBusId = "PCI:00:02.0";
-		  nvidiaBusId = "PCI:01:00.0";
-	  };
+      # Make sure to use the correct Bus ID values for your system!
+      intelBusId = "PCI:00:02.0";
+      nvidiaBusId = "PCI:01:00.0";
+    };
   };
 }

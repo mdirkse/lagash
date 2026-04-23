@@ -1,4 +1,12 @@
-{ inputs, lib, config, options, pkgs, ... }: {
+{
+  inputs,
+  lib,
+  config,
+  options,
+  pkgs,
+  ...
+}:
+{
   nix.nixPath = [ "/etc/nix/path" ];
 
   nix.registry = (lib.mapAttrs (_: flake: { inherit flake; })) ((lib.filterAttrs (_: lib.isType "flake")) inputs);
@@ -9,7 +17,11 @@
     experimental-features = "nix-command flakes";
   };
 
-  nixpkgs = { config = { allowUnfree = true; }; };
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+    };
+  };
 
   systemd.services.nix-daemon = {
     environment.TMPDIR = "/var/tmp";

@@ -1,19 +1,30 @@
-{ inputs, lib, config, pkgs, ... }:
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 let
   wm_target = "graphical-session.target";
-in {
+in
+{
   imports = [ niri/home-manager.nix ];
 
   home.file.".icons/OpenZone_Black".source = "${pkgs.openzone-cursors}/share/icons/OpenZone_Black";
 
   gtk = {
     enable = true;
-    cursorTheme = { name = "OpenZone_Black"; };
+    cursorTheme = {
+      name = "OpenZone_Black";
+    };
     iconTheme = {
       package = pkgs.pop-icon-theme;
       name = "pop-icon-theme";
     };
-    theme = { name = "Pop"; };
+    theme = {
+      name = "Pop";
+    };
   };
 
   xdg.configFile."kanshi/config".source = ./resources/kanshi.config;
@@ -23,14 +34,14 @@ in {
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
-      "application/pdf" = ["google-chrome.desktop"];
-      "text/html" = ["google-chrome.desktop"];
-      "x-scheme-handler/about" = ["google-chrome.desktop"];
-      "x-scheme-handler/http" = ["google-chrome.desktop"];
-      "x-scheme-handler/https" = ["google-chrome.desktop"];
-      "x-scheme-handler/mailto" = ["google-chrome.desktop"];
-      "x-scheme-handler/unknown" = ["google-chrome.desktop"];
-      "x-scheme-handler/webcal" = ["google-chrome.desktop"];
+      "application/pdf" = [ "google-chrome.desktop" ];
+      "text/html" = [ "google-chrome.desktop" ];
+      "x-scheme-handler/about" = [ "google-chrome.desktop" ];
+      "x-scheme-handler/http" = [ "google-chrome.desktop" ];
+      "x-scheme-handler/https" = [ "google-chrome.desktop" ];
+      "x-scheme-handler/mailto" = [ "google-chrome.desktop" ];
+      "x-scheme-handler/unknown" = [ "google-chrome.desktop" ];
+      "x-scheme-handler/webcal" = [ "google-chrome.desktop" ];
     };
   };
 
@@ -58,7 +69,9 @@ in {
     swayidle = {
       enable = true;
       systemdTargets = [ wm_target ];
-      events = { "before-sleep" = "${pkgs.swaylock}/bin/swaylock -f --color 000000"; };
+      events = {
+        "before-sleep" = "${pkgs.swaylock}/bin/swaylock -f --color 000000";
+      };
     };
     swaync.enable = true;
     trayscale.enable = false;

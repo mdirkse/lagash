@@ -23,7 +23,9 @@
                 type = "luks";
                 name = "crypted";
                 extraOpenArgs = [ ];
-                settings = { allowDiscards = true; };
+                settings = {
+                  allowDiscards = true;
+                };
                 content = {
                   type = "zfs";
                   pool = "zroot";
@@ -37,7 +39,9 @@
     zpool = {
       zroot = {
         type = "zpool";
-        options = { ashift = "12"; };
+        options = {
+          ashift = "12";
+        };
         rootFsOptions = {
           atime = "off";
           "com.sun:auto-snapshot" = "false";

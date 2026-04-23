@@ -1,4 +1,11 @@
-{ inputs, lib, config, pkgs, ... }: {
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+{
   home.file.".claude/settings.json" = {
     source = ./resources/claude/settings.json;
     force = true;
