@@ -8,7 +8,10 @@
   networking.networkmanager.enable = true;
 
   services.tailscale.enable = true;
-  systemd.services."tailscaled".wantedBy = lib.mkForce [ ];
+  systemd = {
+    network.enable = true;
+    services."tailscaled".wantedBy = lib.mkForce [ ];
+  };
 
   networking.networkmanager.dispatcherScripts = [{
     source = pkgs.writeShellScript "wifi-ethernet-switch" ''
