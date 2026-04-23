@@ -40,7 +40,7 @@ in {
       enable = true;
       systemd = {
         enable = true;
-        target = wm_target;
+        targets = [ wm_target ];
       };
     };
     wlogout.enable = true;
@@ -57,7 +57,7 @@ in {
     network-manager-applet.enable = true;
     swayidle = {
       enable = true;
-      systemdTarget = wm_target;
+      systemdTargets = [ wm_target ];
       events = { "before-sleep" = "${pkgs.swaylock}/bin/swaylock -f --color 000000"; };
     };
     swaync.enable = true;

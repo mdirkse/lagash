@@ -30,9 +30,14 @@
   };
 
   programs.home-manager.enable = true;
-  programs.git.enable = true;
+  programs.git = {
+    enable = true;
+    signing.format = "openpgp";
+  };
+
+  gtk.gtk4.theme = config.gtk.theme;
 
   systemd.user.startServices = "sd-switch";
 
-  home.stateVersion = "23.11";
+  home.stateVersion = "26.05";
 }
