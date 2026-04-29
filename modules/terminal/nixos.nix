@@ -53,6 +53,10 @@
   programs.fish.enable = true;
   programs.fish.interactiveShellInit = "fish_add_path $HOME/bin";
 
+  programs.fish.shellAbbrs = {
+    cdj = "cd ~/Work/jumbo";
+  };
+
   programs.fish.shellAliases = {
     cat = "bat";
     du = "dust";
