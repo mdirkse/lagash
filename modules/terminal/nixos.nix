@@ -30,7 +30,7 @@
     lld
     lsb-release
     lsof
-    nano
+    micro
     netcat
     networkmanager-openconnect
     net-tools
@@ -65,6 +65,7 @@
     ll = "eza -la";
     ls = "eza";
     lsusb = "cyme";
+    nano = "micro";
     nix-shell = "nix-shell --command (which fish)";
     ps = "procs";
     rg = "rg --hidden --no-ignore";

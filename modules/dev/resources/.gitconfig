@@ -17,7 +17,7 @@
   rebase = true
 
 [core]
-  editor = nano
+  editor = micro
   pager = delta
 
 [delta]
