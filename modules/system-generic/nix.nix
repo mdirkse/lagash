@@ -17,13 +17,12 @@
     experimental-features = "nix-command flakes";
   };
 
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-    };
+  # microvm guests get an external `pkgs` (host instance). Setting
+  # nixpkgs.config there trips the nixpkgs assertion; allowUnfree already
+  # applies via the shared host pkgs.
+  nixpkgs.config = lib.mkIf (!options.nixpkgs.pkgs.isDefined) {
+    allowUnfree = true;
   };
 
-  systemd.services.nix-daemon = {
-    environment.TMPDIR = "/var/tmp";
-  };
+  systemd.services.nix-daemon.environment.TMPDIR = "/var/tmp";
 }

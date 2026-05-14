@@ -19,7 +19,7 @@
     ./modules/ai/nixos.nix
     ./modules/apps/nixos.nix
     ./modules/dev/nixos.nix
-    ./modules/system/nixos.nix
+    ./modules/system-generic/nixos.nix
     ./modules/terminal/nixos.nix
     ./modules/wm/nixos.nix
   ];

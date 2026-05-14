@@ -12,4 +12,5 @@
   # Chrome apps
   home.file."bin/outlook".source = ./resources/bin/outlook;
   home.file."bin/teams".source = ./resources/bin/teams;
+  home.file."bin/spotify-wayland".source = ./resources/bin/spotify-wayland;
 }

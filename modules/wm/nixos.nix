@@ -34,8 +34,8 @@
     networkmanagerapplet
     openzone-cursors
     pwvucontrol
-    pop-gtk-theme
-    pop-icon-theme
+    matcha-gtk-theme
+    papirus-icon-theme
     roboto-mono
     xdg-desktop-portal-gnome
     xdg-utils

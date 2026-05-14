@@ -59,7 +59,6 @@ in
   };
 
   services = {
-    blueman-applet.enable = true;
     gnome-keyring.enable = true;
     kanshi = {
       enable = true;

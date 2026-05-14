@@ -7,13 +7,18 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    microvm = {
+      url = "github:microvm-nix/microvm.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
     {
-      self,
-      nixpkgs,
       home-manager,
+      microvm,
+      nixpkgs,
+      self,
       ...
     }@inputs:
     let
@@ -30,12 +35,18 @@
         laptop = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           system = "x86_64-linux";
-          modules = [ ./hardware/laptop.nix ] ++ nixModules;
+          modules = [
+            ./hardware/laptop.nix
+            ./modules/system-laptop/nixos.nix
+            microvm.nixosModules.host
+          ] ++ nixModules;
         };
         vm = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           system = "x86_64-linux";
-          modules = [ ./hardware/vm.nix ] ++ nixModules;
+          modules = [
+            ./hardware/vm.nix
+          ] ++ nixModules;
         };
       };
     };

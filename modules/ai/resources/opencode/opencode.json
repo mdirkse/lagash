@@ -4,7 +4,7 @@
     "atlassian": {
       "type": "remote",
       "url": "https://mcp.atlassian.com/v1/mcp/authv2",
-      "enabled": true
+      "enabled": false
     },
     "context7": {
       "type": "remote",
@@ -17,15 +17,11 @@
     "datadog": {
       "type": "remote",
       "url": "https://mcp.datadoghq.com/api/unstable/mcp-server/mcp",
-      "enabled": true
-    },
-    "github": {
-      "type": "remote",
-      "url": "https://api.githubcopilot.com/mcp/",
-      "headers": {
-        "Authorization": "Bearer {env:GITHUB_TOKEN}"
-      },
-      "enabled": true
+      "enabled": false
     }
-  }
+  },
+  "plugin": [
+    "file:///home/maarten/.cache/opencode/packages/jumbo-supermarkten-ai-toolkit-1.4.4-test.tgz/node_modules/@jumbo-supermarkten/ai-toolkit/dist/index.js",
+    "@datadog/opencode-plugin"
+  ]
 }

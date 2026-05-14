@@ -9,6 +9,7 @@ window#waybar {
   color: #ffffff;
   font-family: "RobotoMono Nerd Font", monospace;
   font-size: 13px;
+  min-height: 24px;
   transition-property: background-color;
   transition-duration: 0.5s;
 }
@@ -28,6 +29,10 @@ window#waybar.hidden {
 }
 
 #workspaces button.focused {
+  background-color: #64727d;
+}
+
+#workspaces button.active {
   background-color: #64727d;
 }
 
@@ -62,6 +67,11 @@ window#waybar.hidden {
 #tray {
   background-color: transparent;
   font-family: Roboto;
+}
+
+#tray > box > button {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 #window,

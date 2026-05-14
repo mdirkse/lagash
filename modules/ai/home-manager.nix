@@ -20,4 +20,9 @@
     source = ./resources/opencode/opencode.json;
     force = true;
   };
+
+  xdg.configFile."opencode/AGENTS.md" = {
+    source = ./resources/opencode/AGENTS.md;
+    force = true;
+  };
 }

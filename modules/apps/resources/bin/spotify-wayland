@@ -1,0 +1,6 @@
+#! /usr/bin/env bash
+exec env -u DISPLAY spotify \
+  --enable-features=UseOzonePlatform \
+  --ozone-platform=wayland \
+  --enable-wayland-ime=true \
+  "$@"

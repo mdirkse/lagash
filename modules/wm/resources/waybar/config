@@ -1,10 +1,9 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 25,
+  "height": 24,
   "modules-left": [
-    "sway/workspaces",
-    "sway/mode"
+    "niri/workspaces"
   ],
   "modules-right": [
     "pulseaudio",
@@ -18,12 +17,13 @@
     "tray",
     "custom/notification"
   ],
-  "sway/workspaces": {
-    "disable-scroll": true,
-    "all-outputs": false
-  },
-  "sway/mode": {
-    "format": "<span style=\"italic\">{}</span>"
+  "niri/workspaces": {
+    "all-outputs": false,
+    "format": "{icon}",
+    "format-icons": {
+      "active": "",
+      "default": ""
+    }
   },
   "tray": {
     "spacing": 10
@@ -82,6 +82,7 @@
     ]
   },
   "battery": {
+    "bat": "BAT0",
     "states": {
       "warning": 30,
       "critical": 15

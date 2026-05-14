@@ -73,4 +73,34 @@
     ssh = "kitty +kitten ssh";
     top = "btop";
   };
+
+  security.sudo.extraRules = [
+    {
+      users = [ "maarten" ];
+      commands = [
+        {
+          command = "ALL";
+          options = [
+            "SETENV"
+            "NOPASSWD"
+          ];
+        }
+      ];
+    }
+  ];
+
+  users.users = {
+    maarten = {
+      extraGroups = [
+        "docker"
+        "libvirtd"
+        "vboxusers"
+        "video"
+        "wheel"
+      ];
+      initialPassword = "paratodostodo";
+      isNormalUser = true;
+      shell = pkgs.fish;
+    };
+  };
 }
