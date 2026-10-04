@@ -5,6 +5,9 @@
   pkgs,
   ...
 }:
+let
+  virtualboxWithExtpack = import ./virtualbox-with-extpack.nix { inherit lib pkgs; };
+in
 {
   environment.systemPackages = with pkgs; [
     (vscode-with-extensions.override {
@@ -37,7 +40,6 @@
     spotify
     tailscale-systray
     vlc
-    virtualbox
     zed-editor
   ];
 
@@ -51,6 +53,11 @@
     "ddkjiahejlhfcafbddmgiahcphecmpfh" # ublock origin lite
   ];
 
-  virtualisation.virtualbox.host.enable = true;
-  virtualisation.virtualbox.host.enableExtensionPack = true;
+  virtualisation.virtualbox.host = {
+    addNetworkInterface = false;
+    enable = true;
+    enableExtensionPack = false;
+    enableKvm = true;
+    package = virtualboxWithExtpack;
+  };
 }
