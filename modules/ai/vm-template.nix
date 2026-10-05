@@ -32,8 +32,9 @@ in
     };
   in {
     imports = [
-      ../system-generic/nixos.nix
+      ../dev/nixos.nix
       ../terminal/nixos.nix
+      ../system-generic/nixos.nix
       inputs.home-manager.nixosModules.home-manager
     ];
 
@@ -59,8 +60,9 @@ in
       useUserPackages = true;
       users.maarten = {
         imports = [
-          ../terminal/home-manager.nix
           ../ai/home-manager.nix
+          ../dev/home-manager.nix
+          ../terminal/home-manager.nix
         ];
         home.stateVersion = "26.05";
       };

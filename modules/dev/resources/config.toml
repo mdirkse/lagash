@@ -3,6 +3,5 @@ name = "Maarten Dirkse"
 email = "maarten.dirkse@gmail.com"
 vcs = "git"
 
-[target.x86_64-unknown-linux-gnu]
-linker = "clang"
+[target.'cfg(target_os = "linux")']
 rustflags = ["-C", "link-arg=-fuse-ld=mold"]

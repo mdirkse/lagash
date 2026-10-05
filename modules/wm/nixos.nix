@@ -8,6 +8,7 @@
 {
   imports = [
     ./nvidia.nix
+    ./dev/nixos.nix
     ./niri/nixos.nix
   ];
 

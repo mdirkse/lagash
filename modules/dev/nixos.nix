@@ -8,27 +8,24 @@
 {
   environment.systemPackages = with pkgs; [
     awscli2
-    clang
     code-cursor
+    gcc
     gh
     git
     google-cloud-sdk
-    jetbrains-toolbox
     jq
     k9s
     kubectl
     kubectx
     kubelogin-oidc
-    meld
     shellcheck
     serie
     terraform
-    postman
     yq-go
 
     # Java
     gradle
-    jdk21
+    jdk25
 
     # Rust
     rustup
@@ -45,7 +42,7 @@
   # Aliases
   programs.fish.shellAliases = {
     gralde = "gradle";
-    gti = "git";
+    g = "git";
     k = "kubectl";
     kctx = "kubectx";
     kns = "kubens";
