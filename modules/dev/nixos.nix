@@ -5,11 +5,17 @@
   pkgs,
   ...
 }:
+let
+  jdk = pkgs.jdk25;
+in
 {
+  programs.java = {
+    enable = true;
+    package = jdk;
+  };
+
   environment.systemPackages = with pkgs; [
     awscli2
-    code-cursor
-    gcc
     gh
     git
     google-cloud-sdk
@@ -24,19 +30,16 @@
     yq-go
 
     # Java
-    gradle
-    jdk25
+    gradle_9
+    jdk
 
     # Rust
-    rustup
-    cargo-bloat
-    cargo-geiger
-    cargo-modules
-    cargo-udeps
-    cargo-watch
+    gcc
+    mold
   ];
 
-  environment.variables.JAVA_HOME = "${pkgs.jdk21.home}/lib/openjdk";
+  environment.variables.JAVA_HOME = "${jdk.home}/lib/openjdk";
+  environment.variables.GRADLE_OPTS = "-Dorg.gradle.java.home=${jdk.home}/lib/openjdk -Dorg.gradle.java.installations.auto-download=false";
   environment.variables.TF_PLUGIN_CACHE_DIR = "/home/maarten/.terraform.d/plugin-cache";
 
   # Aliases

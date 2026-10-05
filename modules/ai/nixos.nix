@@ -17,14 +17,10 @@ let
   ];
   aiVmPackages = with pkgs; [
     buildkite-cli
-    git
-    github-cli
-    mold
     netlify-cli
     nodejs
     pnpm
     python3
-    rustup
     sqlite
   ];
   bridgeName = "aibr";

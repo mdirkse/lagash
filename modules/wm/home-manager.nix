@@ -9,7 +9,10 @@ let
   wm_target = "graphical-session.target";
 in
 {
-  imports = [ niri/home-manager.nix ];
+  imports = [
+    ./dev/home-manager.nix
+    ./niri/home-manager.nix
+  ];
 
   home.file.".icons/OpenZone_Black".source = "${pkgs.openzone-cursors}/share/icons/OpenZone_Black";
 

@@ -35,12 +35,10 @@ in
     google-chrome
     imagemagick
     prusa-slicer
-    rawtherapee
     slack
     spotify
     tailscale-systray
     vlc
-    zed-editor
   ];
 
   programs.chromium.enable = true;
