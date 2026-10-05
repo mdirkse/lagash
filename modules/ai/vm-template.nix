@@ -24,12 +24,6 @@ in
 
   config = { lib, pkgs, inputs, ... }: let
     inherit (lib) mkDefault;
-    homeState = "/var/lib/home-state";
-    bindMount = source: {
-      device = source;
-      fsType = "none";
-      options = [ "bind" ];
-    };
   in {
     imports = [
       ../dev/nixos.nix
@@ -93,9 +87,9 @@ in
           size = 8192; # MB
         }
         {
-          mountPoint = homeState;
-          image = "home-state.img";
-          size = 4096; # MB — pi, opencode config/cache
+          mountPoint = "/home/maarten";
+          image = "home-maarten.img";
+          size = 16384; # MB — full user home (survives reprovision)
         }
       ];
       # No writableStoreOverlay: overlay-on-virtiofs is unsupported as an
@@ -145,12 +139,6 @@ in
 
     system.stateVersion = "26.05";
 
-    fileSystems = {
-      "/home/maarten/.pi" = bindMount "${homeState}/.pi";
-      "/home/maarten/.config/opencode" = bindMount "${homeState}/opencode";
-      "/home/maarten/.cache/opencode" = bindMount "${homeState}/opencode-cache";
-    };
-
     systemd = {
       # Home Manager activation runs as the user and needs nix-daemon
       # (single-user nix cannot lock /nix/var). Store stays read-only via
@@ -166,14 +154,6 @@ in
       oomd.enable = true;
       tmpfiles.rules = [
         "d /var/lib/ssh 0755 root root -"
-        "d ${homeState}/.pi 0700 maarten maarten -"
-        "d ${homeState}/opencode 0750 maarten maarten -"
-        "d ${homeState}/opencode-cache 0755 maarten maarten -"
-        "d /home/maarten/.config 0755 maarten maarten -"
-        "d /home/maarten/.cache 0755 maarten maarten -"
-        "d /home/maarten/.pi 0700 maarten maarten -"
-        "d /home/maarten/.config/opencode 0750 maarten maarten -"
-        "d /home/maarten/.cache/opencode 0755 maarten maarten -"
       ];
       # Fix for microvm shutdown hang (issue #170):
       # Without this, systemd tries to unmount /nix/store during shutdown, but umount lives in /nix/store, causing a deadlock.
