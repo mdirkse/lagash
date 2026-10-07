@@ -10,6 +10,9 @@
 ## GitHub interaction
 - Try to always interact with the GitHub API using the GitHub CLI.
 
+## Tooling
+- Never use perl
+
 ## Output Preferences
 - If a fix only requires changing 2 lines in a longer file, only output those lines or a diff — do not rewrite the whole file.
 - Keep conversational fluff to an absolute minimum.

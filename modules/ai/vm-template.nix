@@ -154,6 +154,11 @@ in
       oomd.enable = true;
       tmpfiles.rules = [
         "d /var/lib/ssh 0755 root root -"
+        # home-maarten.img mounts here; a new ext4 is root-owned and hides tmpfs home.
+        "d /home/maarten 0755 maarten maarten -"
+        "d /home/maarten/.config 0755 maarten maarten -"
+        "d /home/maarten/.cache 0755 maarten maarten -"
+        "d /home/maarten/.local/share 0755 maarten maarten -"
       ];
       # Fix for microvm shutdown hang (issue #170):
       # Without this, systemd tries to unmount /nix/store during shutdown, but umount lives in /nix/store, causing a deadlock.
@@ -172,6 +177,7 @@ in
     users = {
       groups.maarten.gid = 1000;
       users.maarten = {
+        uid = 1000;
         group = "maarten";
         openssh.authorizedKeys.keys = [
           "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCcUcPxEtlNoXBg6jvIeqr/3hc9GgQplrQtyd215bi5cDIeo7qx6INlOhrZ/M88TN1/HllRi/ygWZWwUxL2aruzB2jLmbN2cGpAeQFH1u8daZT0GtZv4Iu7426k5UXEjd6QxtJEXMUeg8czN9fB7aqntjfl7uVmVl/cozqbM7bF00F8MCKGERpWjglDsuqC7qcK8kMVmcgoe8cGpffj+2zUL/HiMZptJN2GXpN7kDIKUNrUezFLG1osH2lAeox6W6tEG18w+UtgQ4qSEs4ob9MdQBOMgv/8RuAft9ma4yxrEKoy8+ogKacuy6gU/U5Y7ulAS6TWqto+8VKQyRm/vfc5 maarten@lagash"
