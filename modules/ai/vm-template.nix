@@ -155,10 +155,11 @@ in
       tmpfiles.rules = [
         "d /var/lib/ssh 0755 root root -"
         # home-maarten.img mounts here; a new ext4 is root-owned and hides tmpfs home.
-        "d /home/maarten 0755 maarten maarten -"
-        "d /home/maarten/.config 0755 maarten maarten -"
-        "d /home/maarten/.cache 0755 maarten maarten -"
-        "d /home/maarten/.local/share 0755 maarten maarten -"
+        "Z /home/maarten 0755 maarten maarten -"
+        "Z /home/maarten/.config 0755 maarten maarten -"
+        "Z /home/maarten/.cache 0755 maarten maarten -"
+        "Z /home/maarten/.local 0755 maarten maarten -"
+        "Z /home/maarten/.local/share 0755 maarten maarten -"
       ];
       # Fix for microvm shutdown hang (issue #170):
       # Without this, systemd tries to unmount /nix/store during shutdown, but umount lives in /nix/store, causing a deadlock.
