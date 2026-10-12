@@ -28,10 +28,20 @@ let
   tapNamePrefix = "aivm";
   home = config.users.users.maarten.home;
   inherit (import ./vm-template.nix) mk virtiofsShare;
+
+  # Guest hostnames → static bridge IPs (also written to the host's /etc/hosts).
+  aiVms = {
+    personalvm = "192.168.83.8";
+    jumbovm = "192.168.83.7";
+  };
 in
 {
 
   environment.systemPackages = aiCliPackages;
+
+  networking.extraHosts = lib.concatStringsSep "\n" (
+    lib.mapAttrsToList (host: ip: "${ip} ${host}") aiVms
+  );
 
   ## Network configuration for AI VMs (bridge + NAT). Requires systemd-networkd for the
   ## .netdev / .network units; NetworkManager is told not to own the bridge (physical NICs
@@ -76,7 +86,7 @@ in
     personal = mk {
       inherit inputs aiCliPackages aiVmPackages;
       name = "personalvm";
-      address = "192.168.83.8/24";
+      address = "${aiVms.personalvm}/24";
       mac = "02:00:00:00:00:07";
       mem = 4096;
       tap = "${tapNamePrefix}0";
@@ -92,7 +102,7 @@ in
     work = mk {
       inherit inputs aiCliPackages aiVmPackages;
       name = "jumbovm";
-      address = "192.168.83.7/24";
+      address = "${aiVms.jumbovm}/24";
       mac = "02:00:00:00:00:06";
       mem = 4096;
       tap = "${tapNamePrefix}0";

@@ -6,6 +6,12 @@
   ...
 }:
 {
+  programs.ssh = {
+    enable = true;
+    enableDefaultConfig = false;
+    includes = [ "~/.ssh/extra-hosts" ];
+  };
+
   # Fish config
   home.file."bin/uptime-procps".source = "${pkgs.procps}/bin/uptime";
   xdg.configFile."fish/functions/aws-creds.fish".source = ./resources/fish/functions/aws-creds.fish;

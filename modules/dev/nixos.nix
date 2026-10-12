@@ -24,6 +24,7 @@ in
     kubectl
     kubectx
     kubelogin-oidc
+    rustup
     shellcheck
     serie
     terraform

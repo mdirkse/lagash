@@ -6,6 +6,17 @@
   ...
 }:
 {
+  programs.ssh.settings = {
+    personalvm = {
+      User = "maarten";
+      HostName = "192.168.83.8";
+    };
+    jumbovm = {
+      User = "maarten";
+      HostName = "192.168.83.7";
+    };
+  };
+
   home.file.".claude/settings.json" = {
     source = ./resources/claude/settings.json;
     force = true;
