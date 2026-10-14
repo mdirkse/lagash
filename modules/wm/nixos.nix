@@ -16,8 +16,10 @@
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   fonts.packages = with pkgs; [
+    akkadian
     font-awesome
     helvetica-neue-lt-std
+    noto-fonts
   ];
 
   xdg.portal.config = {
