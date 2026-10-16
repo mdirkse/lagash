@@ -12,13 +12,14 @@ in
   environment.systemPackages = with pkgs; [
     (vscode-with-extensions.override {
       vscodeExtensions = with vscode-extensions; [
-        bbenoist.nix
+        arrterian.nix-env-selector
         coolbear.systemd-unit-file
         dbaeumer.vscode-eslint
         esbenp.prettier-vscode
         github.copilot
         github.copilot-chat
         github.vscode-github-actions
+        jnoortheen.nix-ide
         hashicorp.terraform
         mechatroner.rainbow-csv
         ms-azuretools.vscode-docker

@@ -10,8 +10,18 @@
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "files.associations": {
+    "*.nix": "nix",
     "*.svelte": "svelte",
     "*.tf": "terraform"
+  },
+  "nix.enableLanguageServer": true,
+  "nix.serverPath": "nil",
+  "nix.serverSettings": {
+    "nil": {
+      "formatting": {
+        "command": ["nixfmt"]
+      }
+    }
   },
   "files.autoSave": "onFocusChange",
   "files.insertFinalNewline": true,
@@ -57,6 +67,9 @@
   },
   "[markdown]": {
     "editor.formatOnSave": false
+  },
+  "[nix]": {
+    "editor.defaultFormatter": "jnoortheen.nix-ide"
   },
   "[svelte]": {
     "editor.defaultFormatter": "svelte.svelte-vscode"

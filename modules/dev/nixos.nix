@@ -18,6 +18,8 @@ in
     awscli2
     gh
     git
+    nil
+    nixfmt-rfc-style
     google-cloud-sdk
     jq
     k9s
