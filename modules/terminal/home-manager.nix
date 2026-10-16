@@ -12,6 +12,16 @@
     includes = [ "~/.ssh/extra-hosts" ];
   };
 
+  # Make sure the SSH config is not a symlink and has the correct permissions
+  home.activation.fixSshConfig = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    path="$HOME/.ssh/config"
+    if [ -L "$path" ]; then
+      target="$(readlink -f "$path")"
+      rm -f "$path"
+      install -m600 "$target" "$path"
+    fi
+  '';
+
   # Fish config
   home.file."bin/uptime-procps".source = "${pkgs.procps}/bin/uptime";
   xdg.configFile."fish/functions/aws-creds.fish".source = ./resources/fish/functions/aws-creds.fish;
