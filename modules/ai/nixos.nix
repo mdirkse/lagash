@@ -11,6 +11,7 @@ let
     cloud-hypervisor
     claude-code
     cursor-cli
+    herdr
     opencode
     openspec
     pi-coding-agent
@@ -36,7 +37,6 @@ let
   };
 in
 {
-
   environment.systemPackages = aiCliPackages;
 
   networking.extraHosts = lib.concatStringsSep "\n" (
