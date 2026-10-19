@@ -1,0 +1,4 @@
+#!/bin/sh
+set -euo pipefail
+
+git diff --cached --name-only -z --diff-filter=ACMR -- '*.nix' | xargs -0 -r nixfmt -w 130 --check
