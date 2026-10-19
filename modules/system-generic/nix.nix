@@ -7,7 +7,7 @@
   ...
 }:
 {
-  nix.nixPath = [ "/etc/nix/path" ];
+  nix.settings.nix-path = [ "/etc/nix/path" ];
 
   nix.registry = (lib.mapAttrs (_: flake: { inherit flake; })) ((lib.filterAttrs (_: lib.isType "flake")) inputs);
 

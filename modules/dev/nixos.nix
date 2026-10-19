@@ -19,7 +19,7 @@ in
     gh
     git
     nil
-    nixfmt-rfc-style
+    nixfmt
     google-cloud-sdk
     jq
     k9s
