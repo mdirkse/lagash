@@ -39,14 +39,16 @@
             ./hardware/laptop.nix
             ./modules/system-laptop/nixos.nix
             microvm.nixosModules.host
-          ] ++ nixModules;
+          ]
+          ++ nixModules;
         };
         vm = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           system = "x86_64-linux";
           modules = [
             ./hardware/vm.nix
-          ] ++ nixModules;
+          ]
+          ++ nixModules;
         };
       };
     };

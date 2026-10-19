@@ -22,7 +22,6 @@
     value.source = value.flake;
   }) config.nix.registry;
 
-
   networking.timeServers = options.networking.timeServers.default ++ [
     "0.nl.pool.ntp.org"
     "1.nl.pool.ntp.org"

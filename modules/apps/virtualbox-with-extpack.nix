@@ -18,7 +18,12 @@ lib.makeOverridable (
   assert extensionPack == null;
   let
     base = virtualbox.override {
-      inherit enableHardening headless enableWebService enableKvm;
+      inherit
+        enableHardening
+        headless
+        enableWebService
+        enableKvm
+        ;
       extensionPack = null;
     };
     share = if enableHardening then "share/virtualbox" else "libexec/virtualbox";
@@ -30,7 +35,12 @@ lib.makeOverridable (
   pkgs.symlinkJoin {
     name = "virtualbox-${base.version}-with-extpack";
     inherit (base) version;
-    paths = [ base extpackTree ];
-    passthru = base.passthru // { extensionPack = virtualboxExtpack; };
+    paths = [
+      base
+      extpackTree
+    ];
+    passthru = base.passthru // {
+      extensionPack = virtualboxExtpack;
+    };
   }
 ) { }

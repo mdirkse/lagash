@@ -39,9 +39,7 @@ in
 {
   environment.systemPackages = aiCliPackages;
 
-  networking.extraHosts = lib.concatStringsSep "\n" (
-    lib.mapAttrsToList (host: ip: "${ip} ${host}") aiVms
-  );
+  networking.extraHosts = lib.concatStringsSep "\n" (lib.mapAttrsToList (host: ip: "${ip} ${host}") aiVms);
 
   ## Network configuration for AI VMs (bridge + NAT). Requires systemd-networkd for the
   ## .netdev / .network units; NetworkManager is told not to own the bridge (physical NICs
