@@ -65,6 +65,13 @@
             type = "zfs_fs";
             mountpoint = "/var/log";
           };
+          swap = {
+            type = "zfs_volume";
+            size = "16G";
+            content = {
+              type = "swap";
+            };
+          };
         };
       };
     };

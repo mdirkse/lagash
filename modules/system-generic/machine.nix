@@ -11,6 +11,7 @@
     kernel = {
       sysctl."fs.inotify.max_user_watches" = 524288;
       sysctl."net.ipv4.ip_forward" = 0;
+      sysctl."vm.swappiness" = 1;
     };
 
     tmp.useTmpfs = true;

@@ -88,7 +88,7 @@ in
       name = "personalvm";
       address = "${aiVms.personalvm}/24";
       mac = "02:00:00:00:00:07";
-      mem = 4096;
+      mem = 8192;
       tap = "${tapNamePrefix}0";
       gateway = bridgeIp;
       extraShares = [
@@ -104,7 +104,7 @@ in
       name = "jumbovm";
       address = "${aiVms.jumbovm}/24";
       mac = "02:00:00:00:00:06";
-      mem = 4096;
+      mem = 8192;
       tap = "${tapNamePrefix}0";
       gateway = bridgeIp;
       extraShares = [
