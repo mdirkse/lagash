@@ -27,13 +27,18 @@
     force = true;
   };
 
-  xdg.configFile."opencode/opencode.json" = {
-    source = ./resources/opencode/opencode.json;
+  xdg.configFile."herdr/config.toml" = {
+    source = ./resources/herdr/config.toml;
     force = true;
   };
 
   xdg.configFile."opencode/AGENTS.md" = {
     source = ./resources/opencode/AGENTS.md;
+    force = true;
+  };
+
+  xdg.configFile."opencode/opencode.json" = {
+    source = ./resources/opencode/opencode.json;
     force = true;
   };
 }
